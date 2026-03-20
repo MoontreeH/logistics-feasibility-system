@@ -187,9 +187,9 @@ class AdaptiveAssessorV2:
         # 没有缺失的必需参数了
         # 如果有默认值被应用，通知用户
         if result.get("applied_defaults"):
-            defaults_msg = "已应用默认值：\n" + 
-                          "\n".join([f"  • {d['description']}: {d['value']}" 
+            defaults_list = "\n".join([f"  • {d['description']}: {d['value']}" 
                                     for d in result["applied_defaults"]])
+            defaults_msg = f"已应用默认值：\n{defaults_list}"
         else:
             defaults_msg = ""
         
